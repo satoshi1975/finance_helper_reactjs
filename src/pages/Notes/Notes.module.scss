@@ -1,0 +1,15 @@
+.notecontainer {
+	display: flex;
+	flex-direction: row-reverse;
+	align-items: center;
+	height: 100%;
+	width: 100%;
+}
+.notesarea {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	height: 100%;
+	width: 100%;
+	justify-content: center;
+}

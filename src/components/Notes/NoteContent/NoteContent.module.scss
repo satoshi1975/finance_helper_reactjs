@@ -1,0 +1,23 @@
+.editnotearea {
+	display: flex;
+	justify-content: space-around;
+}
+.editnoteform {
+	display: flex;
+	flex-direction: column;
+}
+.selectgroup {
+	display: flex;
+	justify-content: center;
+	margin-bottom: 5%;
+}
+.selectgroupbtn {
+	width: 100%;
+	margin-bottom: 5%;
+}
+.edittitleinput {
+	margin-bottom: 5%;
+}
+.edittextinput {
+	margin-bottom: 5%;
+}

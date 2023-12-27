@@ -1,0 +1,37 @@
+.newnoteform {
+	display: flex;
+	padding: 20px;
+	flex-direction: column;
+	position: absolute;
+	background-color: white;
+	z-index: 1000;
+	min-width: 342px;
+	min-height: 247px;
+	border: solid 1px blue;
+	border-radius: 20px;
+}
+.closebtn {
+	// bottom: 0;
+	// position: absolute;
+	// width: 100%;
+	// border-end-end-radius: 20px;
+	// border-end-start-radius: 20px;
+	margin-top: 4% !important;
+}
+.addnotebtn {
+	// margin-bottom: 7% !important;
+}
+.notetitle {
+	margin-bottom: 4% !important;
+}
+.notetext {
+	margin-bottom: 4% !important;
+	// min-height: 90px;
+	min-height: 163px !important;
+	max-height: 288px !important;
+	overflow: auto !important;
+
+	&::before {
+		overflow: auto !important;
+	}
+}
