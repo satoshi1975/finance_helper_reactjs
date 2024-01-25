@@ -6,7 +6,6 @@ import Button from '@mui/joy/Button'
 import Add from '@mui/icons-material/Add'
 import Close from '@mui/icons-material/Close'
 import Textarea from '@mui/joy/Textarea'
-import { useSelector } from 'react-redux'
 
 export const NoteSetGroup = ({ noteContent, setContent }) => {
 	const [anchorEl, setAnchorEl] = useState(null)
@@ -19,7 +18,7 @@ export const NoteSetGroup = ({ noteContent, setContent }) => {
 		axios
 			.get('/groups')
 			.then(response => {
-				setMenuItems(response.data) // предполагаем, что ответ содержит массив элементов
+				setMenuItems(response.data)
 			})
 			.catch(error => console.error('Ошибка при запросе данных:', error))
 	}, [])
@@ -31,7 +30,6 @@ export const NoteSetGroup = ({ noteContent, setContent }) => {
 		setIsAddGroup(false)
 	}
 	const isValidName = name => {
-		console.log(name)
 		if (name.length === 0 || name.length > 20) {
 			setIsActiveAdd(true)
 		} else {
@@ -42,11 +40,7 @@ export const NoteSetGroup = ({ noteContent, setContent }) => {
 		setAnchorEl(event.currentTarget)
 	}
 	const handleChooseGroup = id => {
-		console.log('state', noteContent)
 		setContent(id)
-		console.log('state2', noteContent)
-		// setAnchorEl(null)
-		// setIsAddGroup(false)
 	}
 
 	const handleClose = () => {
@@ -96,7 +90,7 @@ export const NoteSetGroup = ({ noteContent, setContent }) => {
 						Add group
 					</Button>
 				)}
-				{/* <MenuItem onClick={handleClose}>hi</MenuItem> */}
+
 				{menuItems.map((item, index) => (
 					<MenuItem
 						key={index}
@@ -106,7 +100,7 @@ export const NoteSetGroup = ({ noteContent, setContent }) => {
 						onClick={() => handleChooseGroup(item._id)}
 					>
 						{item.name}
-					</MenuItem> // Измените в соответствии со структурой вашего ответа
+					</MenuItem>
 				))}
 			</Menu>
 		</div>

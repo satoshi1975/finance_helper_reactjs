@@ -27,22 +27,18 @@ function MonthYearSelector({ onSearch }) {
 	const handleMonthChange = event => {
 		setMonthValue(event.target.value)
 		dispatch(setMonth(event.target.value))
-		// console.log(month_m)
 	}
 
 	const handleDelete = () => {
 		dispatch(fetchDeleteTransactions({ ids: ids }))
-		// console.log(year_m)
-		// console.log(month_m)
 		dispatch(fetchTransByMonth({ year, month }))
 	}
 
-	// Генерация списка годов
 	const years = Array.from(
 		new Array(20),
 		(val, index) => new Date().getFullYear() - index
 	)
-	// Месяцы
+
 	const months = Array.from(new Array(12), (val, index) => index + 1)
 
 	return (

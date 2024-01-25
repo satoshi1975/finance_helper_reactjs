@@ -10,6 +10,7 @@ import { Notes } from './pages/Notes/Notes'
 import { Finance } from './pages/Finance/Finance'
 import { useDispatch, useSelector } from 'react-redux'
 import { fetchAuthMe, selectIsAuth } from './redux/slices/auth'
+import { Currency } from './pages/Currency/Currency'
 
 const App = () => {
 	const dispatch = useDispatch()
@@ -18,7 +19,7 @@ const App = () => {
 	React.useEffect(() => {
 		dispatch(fetchAuthMe())
 	}, [])
-	// const { page } = useSelector(state => state.routing)
+
 	return (
 		<>
 			<Header />
@@ -28,19 +29,10 @@ const App = () => {
 					<Route path='/registration' element={<Register />} />
 					<Route path='/notes' element={<Notes />} />
 					<Route path='/finance' element={<Finance />} />
+					<Route path='/currency' element={<Currency />} />
 				</Routes>
 			</Container>
 		</>
-
-		// <>
-		// 	<Header />
-		// 	{/* <Body> */}
-		// 	<Login />
-		// 	{/* <Routes>
-		// 			<Route path='/login' element={<Login />} />
-		// 		</Routes> */}
-		// 	{/* </Body> */}
-		// </>
 	)
 }
 

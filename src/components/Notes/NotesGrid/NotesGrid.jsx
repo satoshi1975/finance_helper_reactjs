@@ -17,8 +17,6 @@ import Close from '@mui/icons-material/Close'
 
 export const NotesGrid = () => {
 	const [input, setInput] = useState('')
-	const [tags, setTags] = useState([])
-	const [tagInput, setTagInput] = useState('')
 	const [isNoteContent, setIsNoteContent] = useState(false)
 	const [noteContentId, setNoteContentId] = useState(null)
 
@@ -68,12 +66,12 @@ export const NotesGrid = () => {
 	const DateTimeFormater = date => {
 		const newDate = new Date(date)
 		const formattedDateTime = newDate.toLocaleString('ru-RU', {
-			day: '2-digit', // День
-			month: '2-digit', // Месяц
-			year: 'numeric', // Год
-			hour: '2-digit', // Часы
-			minute: '2-digit', // Минуты
-			second: '2-digit', // Секунды
+			day: '2-digit',
+			month: '2-digit',
+			year: 'numeric',
+			hour: '2-digit',
+			minute: '2-digit',
+			second: '2-digit',
 		})
 		return formattedDateTime
 	}

@@ -4,6 +4,6 @@
 }
 .form {
 	display: grid;
-	grid-auto-flow: column; /* Элементы в ряд */
-	grid-gap: 10px; /* Отступ между элементами */
+	grid-auto-flow: column;
+	grid-gap: 10px;
 }

@@ -10,7 +10,6 @@ import {
 
 import { set } from 'react-hook-form'
 const columns = [
-	// { field: '_id', headerName: 'ID', width: 70 },
 	{ field: 'title', headerName: 'Description', width: 130 },
 	{ field: 'type', headerName: 'Type', width: 130 },
 	{
@@ -49,7 +48,6 @@ export default function DataTable() {
 				pageSizeOptions={[5, 10]}
 				onRowSelectionModelChange={ids => onSelected(ids)}
 				checkboxSelection
-				// onRowSelectionModelChange={() => onSelected(_id)}
 			/>
 		</div>
 	)

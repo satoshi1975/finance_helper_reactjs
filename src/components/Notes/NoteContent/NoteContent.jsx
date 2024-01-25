@@ -5,29 +5,21 @@ import { useForm } from 'react-hook-form'
 import { Textarea } from '@mui/joy'
 import ModalClose from '@mui/joy/ModalClose'
 import ModalDialog from '@mui/joy/ModalDialog'
-import Typography from '@mui/joy/Typography'
+
 import axios from '../../../axios'
 import classess from './NoteContent.module.scss'
-import Sheet from '@mui/joy/Sheet'
-import DropdownButton from '../NotesSections/NotesSections'
+
 import { NoteSetGroup } from '../NoteSetGroup/NoteSetGroup'
-import { useDispatch, useSelector } from 'react-redux'
-import {
-	fetchEditNote,
-	fetchSearchNotes,
-	setEditOrSelect,
-} from '../../../redux/slices/notes'
+import { useDispatch } from 'react-redux'
+import { fetchEditNote, fetchSearchNotes } from '../../../redux/slices/notes'
 
 export const NoteContent = ({ isShow, noteId, changeShow }) => {
-	const [anchorEl, setAnchorEl] = useState(null)
-	const [menuItems, setMenuItems] = useState([])
 	const [noteContent, setNoteContent] = useState({})
-	const [selectGroup, setSelectGroup] = useState()
+
 	const [isEditBtnDisable, setIsEditBtnDisable] = useState(true)
 	const dispatch = useDispatch()
 
 	useEffect(() => {
-		// console.log('SELECT', select)
 		axios
 			.get('/note/' + noteId)
 			.then(response => {
@@ -57,13 +49,11 @@ export const NoteContent = ({ isShow, noteId, changeShow }) => {
 
 	useEffect(() => {
 		console.log('myVariable изменилась:', noteContent)
-		// Вы можете добавить здесь дополнительную логику обработки изменений
 	}, [noteContent])
 
 	const handlerSubmitEditNote = async params => {
 		try {
 			params.group = noteContent.group
-			// console.log(params)
 			const data = await dispatch(fetchEditNote({ id: noteId, params }))
 			console.log(data)
 			changeShow(false)
@@ -73,19 +63,12 @@ export const NoteContent = ({ isShow, noteId, changeShow }) => {
 		}
 	}
 	const handleChangeGroup = async id => {
-		// setNoteContent((noteContent.group = id))
 		setNoteContent(noteContent => {
 			return {
 				...noteContent,
 				group: id,
 			}
 		})
-		// console.log('type', noteContent)
-		// const data = await dispatch(
-		// 	fetchEditNote({ id: noteId, params: noteContent })
-		// )
-		// console.log('finally', noteContent)
-		// setNoteContent((noteContent.group = id))
 	}
 
 	return (

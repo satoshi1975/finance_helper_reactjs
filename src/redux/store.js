@@ -5,6 +5,7 @@ import {
 	transactionsDelete,
 	transactionsSearchReducer,
 } from './slices/transactions'
+import currencyReducer, { BaseCurrency, ExchangeRates } from './slices/currency'
 
 import {
 	notesReducer,
@@ -23,6 +24,9 @@ const store = configureStore({
 		transactionEdit: transactionsControllReducer,
 		yearmonthtrans: transactionsSearchReducer,
 		deleteTransactions: transactionsDelete,
+		currency: currencyReducer,
+		baseCurrency: BaseCurrency,
+		exchangeRates: ExchangeRates,
 	},
 })
 

@@ -5,7 +5,6 @@ import styles from './AuthBtns.module.scss'
 import { Link } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import { logout, selectIsAuth } from '../../../redux/slices/auth'
-// import { blue } from '@mui/material/colors'
 
 const AuthBtns = () => {
 	const dispatch = useDispatch()

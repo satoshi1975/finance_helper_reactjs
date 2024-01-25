@@ -20,18 +20,8 @@ export const ExpStatistic = () => {
 		datasets: [
 			{
 				data: Object.values(expensesByType),
-				backgroundColor: [
-					'#FF6384',
-					'#36A2EB',
-					'#FFCE56',
-					// Другие цвета по желанию
-				],
-				hoverBackgroundColor: [
-					'#FF6384',
-					'#36A2EB',
-					'#FFCE56',
-					// Другие цвета по желанию
-				],
+				backgroundColor: ['#FF6384', '#36A2EB', '#FFCE56'],
+				hoverBackgroundColor: ['#FF6384', '#36A2EB', '#FFCE56'],
 			},
 		],
 	}

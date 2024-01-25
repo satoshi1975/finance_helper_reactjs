@@ -469,6 +469,11 @@
   resolved "https://registry.yarnpkg.com/@eslint/js/-/js-8.56.0.tgz#ef20350fec605a7f7035a01764731b2de0f3782b"
   integrity sha512-gMsVel9D7f2HLkBma9VbtzZRehRogVRfbr++f06nL2vnCGCNlzOD+/MUov/F4p8myyAHspEhVobgjpX64q5m6A==
 
+"@everapi/freecurrencyapi-js@^1.0.1":
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/@everapi/freecurrencyapi-js/-/freecurrencyapi-js-1.0.1.tgz#efdb8371a612c86b1ea69fba58efe6a8eb838bd1"
+  integrity sha512-GusI6Fdu4gEZhEyOOZKf9KOnSp3Atb3zLUQIp0X569LphBEv0IrZF2CALmbTmut4DacqqlP2zOpeS96bkAt2yQ==
+
 "@floating-ui/core@^1.4.2":
   version "1.5.2"
   resolved "https://registry.yarnpkg.com/@floating-ui/core/-/core-1.5.2.tgz#53a0f7a98c550e63134d504f26804f6b83dbc071"
@@ -2286,6 +2291,11 @@ p-locate@^5.0.0:
   integrity sha512-LaNjtRWUBY++zB5nE/NwcaoMylSPk+S+ZHNB1TzdbMJMny6dynpAGt7X/tl/QYq3TIeE6nxHppbo2LGymrG5Pw==
   dependencies:
     p-limit "^3.0.2"
+
+papaparse@^5.4.1:
+  version "5.4.1"
+  resolved "https://registry.yarnpkg.com/papaparse/-/papaparse-5.4.1.tgz#f45c0f871853578bd3a30f92d96fdcfb6ebea127"
+  integrity sha512-HipMsgJkZu8br23pW15uvo6sib6wne/4woLZPlFf3rpDyMe9ywEXUsuD7+6K9PRkJlVT51j/sCOYDKGGS3ZJrw==
 
 parent-module@^1.0.0:
   version "1.0.1"

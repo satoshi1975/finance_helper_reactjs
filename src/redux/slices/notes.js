@@ -25,13 +25,6 @@ export const fetchEditNote = createAsyncThunk(
 		return data
 	}
 )
-// export const fetchNotesGroups = createAsyncThunk(
-// 	'notes/fetchNotesGroups',
-// 	async searchTerm => {
-// 		const { data } = await axios.get(`/groups`)
-// 		return data
-// 	}
-// )
 
 export const fetchAddNote = createAsyncThunk(
 	'notes/fetchAddNote',
@@ -98,7 +91,6 @@ const searchSlice = createSlice({
 			state.currentPage = action.payload
 		},
 		setSearchResult: (state, action) => {
-			// state.currentPage = action.payload
 			state.data = action.payload
 		},
 	},
@@ -133,7 +125,6 @@ const notesSlice = createSlice({
 			state.currentPage = action.payload
 		},
 		setSearchResult: (state, action) => {
-			// state.currentPage = action.payload
 			state.data = action.payload
 		},
 	},
@@ -162,7 +153,7 @@ const notesSlice = createSlice({
 
 export const { setCurrentPage, setSearchResult } = searchSlice.actions
 export const { setEditOrSelect } = editOrSelectGroupSlice.actions
-// export const { setCurrentPage, setSearchResult } = noteControllerSlice.actions
+
 export const editOrSelectGroupReducer = editOrSelectGroupSlice.reducer
 export const notesReducer = notesSlice.reducer
 export const notesControlReducer = noteControllerSlice.reducer

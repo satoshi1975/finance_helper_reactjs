@@ -34,7 +34,6 @@ function DropdownButton(input) {
 		setIsAddGroup(false)
 	}
 	const isValidName = name => {
-		console.log(name)
 		if (name.length === 0 || name.length > 20) {
 			setIsActiveAdd(true)
 		} else {
@@ -50,8 +49,6 @@ function DropdownButton(input) {
 		setIsAddGroup(false)
 	}
 	const handleSortGroup = id => {
-		console.log('id_group', id)
-		console.log('input', input)
 		dispatch(fetchSearchNotes({ search: '', group: id }))
 		setAnchorEl(null)
 		setIsAddGroup(false)
@@ -108,7 +105,7 @@ function DropdownButton(input) {
 				{menuItems.map((item, index) => (
 					<MenuItem key={index} onClick={() => handleSortGroup(item._id)}>
 						{item.name}
-					</MenuItem> // Измените в соответствии со структурой вашего ответа
+					</MenuItem>
 				))}
 			</Menu>
 		</div>
@@ -116,53 +113,3 @@ function DropdownButton(input) {
 }
 
 export default DropdownButton
-
-// import React, { useState } from 'react'
-// import { Button, Menu, MenuItem } from '@mui/material'
-
-// export const VerticalTabs = () => {
-// 	const [anchorEl, setAnchorEl] = useState(null)
-// 	const open = Boolean(anchorEl)
-
-// 	const handleClick = event => {
-// 		setAnchorEl(event.currentTarget)
-// 	}
-
-// 	const handleClose = () => {
-// 		setAnchorEl(null)
-// 	}
-
-// 	return (
-// 		<div>
-// 			<Button
-// 				aria-controls='simple-menu'
-// 				aria-haspopup='true'
-// 				onClick={handleClick}
-// 			>
-// 				Select Group
-// 			</Button>
-// 			<Menu
-// 				id='simple-menu'
-// 				anchorEl={anchorEl}
-// 				keepMounted
-// 				open={open}
-// 				onClose={handleClose}
-// 			>
-// 				<MenuItem onClick={handleClose}>Опция 1</MenuItem>
-// 				<MenuItem onClick={handleClose}>Опция 2</MenuItem>
-// 				<MenuItem onClick={handleClose}>Опция 3</MenuItem>
-// 			</Menu>
-// 		</div>
-// 	)
-// }
-
-// export default VerticalTabs
-
-// export default function VerticalTabs() {
-// 	return (
-// 		<Container>
-// 			<Button>All</Button>
-// 			<Button>Favorite</Button>
-// 		</Container>
-// 	)
-// }

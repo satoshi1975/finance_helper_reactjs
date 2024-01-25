@@ -1,6 +1,6 @@
-import { Box, Button, FormControl, FormLabel, Input, Option } from '@mui/joy'
+import { Box, Button, Input, Option } from '@mui/joy'
 import Select, { selectClasses } from '@mui/joy/Select'
-import React, { useEffect } from 'react'
+import React from 'react'
 import classess from './AddTransaction.module.scss'
 import { useForm } from 'react-hook-form'
 import PropTypes from 'prop-types'
@@ -10,28 +10,24 @@ import Add from '@mui/icons-material/Add'
 import {
 	fetchAddTransaction,
 	fetchTransByMonth,
-	setMonth,
 } from '../../../../../../redux/slices/transactions'
 import { useDispatch, useSelector } from 'react-redux'
-// import { Select } from '@mui/material'
 
 export const AddTransaction = () => {
 	const dispatch = useDispatch()
 	const year = useSelector(state => state.yearmonthtrans.year)
 	const month = useSelector(state => state.yearmonthtrans.month)
 	const data = useSelector(state => state.yearmonthtrans.data)
-	// useEffect(() => {
-	// 	dispatch(fetchTransByMonth({ year, month }))
-	// }, [dispatch, year, month])
 
 	const {
 		register,
 		handleSubmit,
+		reset,
 		formState: { errors, isValid },
 	} = useForm({
 		defaultValues: {
-			title: '',
-			amount: '',
+			title: 'fewf',
+			amount: 0,
 			type: '',
 		},
 	})
@@ -40,7 +36,12 @@ export const AddTransaction = () => {
 		try {
 			const data = await dispatch(fetchAddTransaction(params))
 			dispatch(fetchTransByMonth({ year, month }))
-			console.log(data)
+			reset()
+			// reset({
+			// 	title: '',
+			// 	amount: '',
+			// 	type: '',
+			// })
 		} catch (error) {
 			console.error('Ошибка при отправке заметки:', error)
 		}
@@ -58,19 +59,17 @@ export const AddTransaction = () => {
 						placeholder='desc'
 					/>
 
-					<FormControl>
-						<Input
-							{...register('amount', { required: 'Enter amount' })}
-							// onChange={event => setValue(event.target.value)}
-							placeholder='Amount'
-							size='sm'
-							slotProps={{
-								input: {
-									component: NumericFormatAdapter,
-								},
-							}}
-						/>
-					</FormControl>
+					<Input
+						{...register('amount', { required: 'Enter amount' })}
+						placeholder='Amount'
+						size='sm'
+						slotProps={{
+							input: {
+								component: NumericFormatAdapter,
+							},
+						}}
+					/>
+
 					<Select
 						placeholder='Select a type'
 						{...register('type', { required: 'Select a type' })}
@@ -86,11 +85,12 @@ export const AddTransaction = () => {
 							},
 						}}
 					>
-						<Option value='dog'>Dog</Option>
-						<Option value='cat'>Cat</Option>
-						<Option value='fish'>Fish</Option>
-						<Option value='bird'>Bird</Option>
+						<Option value='dog'>Transport</Option>
+						<Option value='cat'>Food</Option>
+						<Option value='fish'>Rent</Option>
+						<Option value='bird'>Else</Option>
 					</Select>
+
 					<Button
 						startDecorator={<Add />}
 						size='sm'

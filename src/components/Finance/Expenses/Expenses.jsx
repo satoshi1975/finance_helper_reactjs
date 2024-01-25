@@ -1,4 +1,4 @@
-import { Box, colors } from '@mui/material'
+import { Box } from '@mui/material'
 import React from 'react'
 import classess from './Expenses.module.scss'
 import { ExpStatistic } from './Statistic/Statistic'
